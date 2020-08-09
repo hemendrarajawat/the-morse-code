@@ -4,7 +4,7 @@
 
 This is an encryptor and decryptor for the morse code built on Flask. 
 
-Here is the website link: https://the-morse-code.herokuapp.com
+Here is the website link: https://themorsecode.herokuapp.com
 
 ## Encrypt
 ![Encrypt](https://github.com/hemendrarajawat/the-morse-code/blob/master/assets/images/encrypt.png)
