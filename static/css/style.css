@@ -1,0 +1,135 @@
+html, body {
+    margin: 0;
+    min-height: 100%;
+    font-family: sans-serif;
+}
+
+h1, h4 {
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(-189deg, #c31432 10%, #2a2d34);
+}
+
+div.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+div.container {
+    width: 80%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 20px 2px #3e3e3e;;
+}
+
+div.heading div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #3e50b4;
+}
+
+div.heading div img {
+    width: 60px;
+    height: 100%;
+}
+
+div.heading div h1 {
+    margin: 0 0 0 10px;
+}
+
+div.operation-section {
+    display: none;
+}
+
+div.wrapper {
+    margin: 30px 10px 0;
+}
+
+div.wrapper div.options {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 2px solid #3e50b4;
+}
+
+div.wrapper div.options a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div.wrapper div.options a.selected {
+    margin-bottom: -1px;
+    border-radius: 15px 15px 0 0;
+    background: #3e50b4;
+    color: #ffffff;
+}
+
+div.wrapper div.inner-section {
+    padding: 15px;
+}
+
+div.operation-section.selected {
+    display: block;
+}
+
+form label {
+    margin: 4px 0;
+}
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 75px;
+    max-height: 220px;
+    border-radius: 5px;
+    margin: 5px 0 10px;
+    outline: none;
+}
+
+input[type="submit"] {
+    background: #c31432;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background: #c31431ce;
+}
+
+input[type="submit"]:focus {
+    background: #990f26;
+}
+
+div.output-section {
+    margin: 20px 0;
+}
+
+div.output-section p {
+    margin: 5px 0;
+}
+
+div.output-section div {
+    padding: 10px;
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 5px;
+}
+
+div.output-section div:empty {
+    display: none;
+}

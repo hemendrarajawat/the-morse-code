@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encrypt and Decrypt | The Morse Code</title>
+
+        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="heading">
+                    <div>
+                        <a href="/">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+                            <h1>The Morse Code</h1>
+                        </a>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="options">
+                        <a href="#encrypt" data-id="encrypt" class="operation-action"><h4>Encrypt</h4></a>
+                        <a href="#decrypt" data-id="decrypt" class="operation-action"><h4>Decrypt</h4></a>
+                    </div>
+                    <div class="inner-section">
+                        <div data-id="encrypt" class="operation-section">
+                            <div class="input-section">
+                                <form method="post" name="encrypt">
+                                    <label for="message">Enter the message you want to encrypt:</label>
+                                    <textarea name="message" id="message" rows="4" autofocus></textarea>
+                                    <input type="submit" data-button="encrypt" value="Encrypt">
+                                </form>
+                            </div>
+
+                            <div class="output-section">
+                                <p>Morse Code encrypted message: </p>
+                                <div id="cipher-output"></div>
+                            </div>
+                        </div>
+                        <div data-id="decrypt" class="operation-section">
+                            <div class="input-section">
+                                <form method="post" name="decrypt">
+                                    <label for="cipher">Enter the cipher you want to decrypt:</label>
+                                    <textarea name="cipher" id="cipher" rows="4" autofocus></textarea>
+                                    <input type="submit" data-button="decrypt" value="Decrypt">
+                                </form>
+                            </div>
+
+                            <div class="output-section">
+                                <p>Morse Code decrypted message: </p>
+                                <div id="message-output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
