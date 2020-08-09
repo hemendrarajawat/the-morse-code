@@ -3,6 +3,7 @@
 ----
 
 ![Build and Test](https://github.com/hemendrarajawat/the-morse-code/workflows/Build%20and%20Test/badge.svg)
+![CodeQL](https://github.com/hemendrarajawat/the-morse-code/workflows/CodeQL/badge.svg)
 
 This is an encryptor and decryptor for the morse code built on Flask. 
 
