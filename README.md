@@ -2,6 +2,8 @@
 
 ----
 
+![Build and Test](https://github.com/hemendrarajawat/the-morse-code/workflows/Build%20and%20Test/badge.svg)
+
 This is an encryptor and decryptor for the morse code built on Flask. 
 
 Here is the website link: https://themorsecode.herokuapp.com
