@@ -58,6 +58,9 @@ function handleEncryptFormSubmit(event) {
     }
 
     if (formData && formData.get('message') != "") {
+        let messageTextarea = document.getElementById('message');
+        messageTextarea.classList.remove('error');
+
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -79,6 +82,11 @@ function handleEncryptFormSubmit(event) {
         xhttp.open("POST", "/encrypt/", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(`message=${formData.get('message')}`);
+    } else {
+        let messageTextarea = document.getElementById('message');
+        messageTextarea.classList.add('error');
+
+        submitButton.value = 'Encrypt';
     }
 
     event.preventDefault();
@@ -92,6 +100,9 @@ function handleDecryptFormSubmit(event) {
     }
 
     if (formData && formData.get('cipher') != "") {
+        let cipherTextarea = document.getElementById('cipher');
+        cipherTextarea.classList.remove('error');
+
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -113,6 +124,11 @@ function handleDecryptFormSubmit(event) {
         xhttp.open("POST", "/decrypt/", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(`cipher=${formData.get('cipher')}`);
+    } else {
+        let cipherTextarea = document.getElementById('cipher');
+        cipherTextarea.classList.add('error');
+
+        submitButton.value = 'Decrypt';
     }
 
     event.preventDefault();

@@ -98,6 +98,10 @@ textarea {
     outline: none;
 }
 
+textarea.error {
+    border: 2px solid #b92424c7;
+}
+
 input[type="submit"] {
     background: #c31432;
     border: 0;
