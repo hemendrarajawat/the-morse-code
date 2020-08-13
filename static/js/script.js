@@ -48,6 +48,38 @@ function setupFormSubmit() {
             handleDecryptFormSubmit(event);
         })
     }
+
+    let messageTextarea = document.getElementById('message');
+    messageTextarea.onchange = (event) => {
+        let element = event.target;
+        element.value = element.value.trim();
+        if (element.value != null && element.value.trim() != "") {
+            element.classList.remove('error');
+        } else {
+            element.classList.add('error');
+        }
+
+        let section = document.querySelector('div[class*="encypt-output-section"]');
+        if (section) {
+            section.style.display = 'none';
+        }
+    }
+
+    let cipherTextarea = document.getElementById('cipher');
+    cipherTextarea.onchange = (event) => {
+        let element = event.target;
+        element.value = element.value.trim();
+        if (element.value != null && element.value.trim() != "") {
+            element.classList.remove('error');
+        } else {
+            element.classList.add('error');
+        }
+        
+        let section = document.querySelector('div[class*="decrypt-output-section"]');
+        if (section) {
+            section.style.display = 'none';
+        }
+    }
 }
 
 function handleEncryptFormSubmit(event) {
@@ -57,7 +89,7 @@ function handleEncryptFormSubmit(event) {
         submitButton.value = 'Encrypting...';
     }
 
-    if (formData && formData.get('message') != "") {
+    if (formData && formData.get('message').trim() != "") {
         let messageTextarea = document.getElementById('message');
         messageTextarea.classList.remove('error');
 
@@ -67,6 +99,11 @@ function handleEncryptFormSubmit(event) {
                 let response = JSON.parse(this.responseText);
 
                 if (response.status === 'success') {
+                    let section = document.querySelector('div[class*="encypt-output-section"]');
+                    if (section) {
+                        section.style.display = 'block';
+                    }
+
                     let cipherOutput = document.querySelector('div[id="cipher-output"]');
                     if (cipherOutput) {
                         cipherOutput.innerText = response.cipher;
@@ -81,7 +118,7 @@ function handleEncryptFormSubmit(event) {
         };
         xhttp.open("POST", "/encrypt/", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(`message=${formData.get('message')}`);
+        xhttp.send(`message=${formData.get('message').trim()}`);
     } else {
         let messageTextarea = document.getElementById('message');
         messageTextarea.classList.add('error');
@@ -99,7 +136,7 @@ function handleDecryptFormSubmit(event) {
         submitButton.value = 'Decrypting...';
     }
 
-    if (formData && formData.get('cipher') != "") {
+    if (formData && formData.get('cipher').trim() != "") {
         let cipherTextarea = document.getElementById('cipher');
         cipherTextarea.classList.remove('error');
 
@@ -109,6 +146,11 @@ function handleDecryptFormSubmit(event) {
                 let response = JSON.parse(this.responseText);
 
                 if (response.status === 'success') {
+                    let section = document.querySelector('div[class*="decrypt-output-section"]');
+                    if (section) {
+                        section.style.display = 'block';
+                    }
+
                     let messageOutput = document.querySelector('div[id="message-output"]');
                     if (messageOutput) {
                         messageOutput.innerText = response.message;
@@ -123,7 +165,7 @@ function handleDecryptFormSubmit(event) {
         };
         xhttp.open("POST", "/decrypt/", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(`cipher=${formData.get('cipher')}`);
+        xhttp.send(`cipher=${formData.get('cipher').trim()}`);
     } else {
         let cipherTextarea = document.getElementById('cipher');
         cipherTextarea.classList.add('error');
