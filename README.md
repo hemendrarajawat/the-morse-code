@@ -1,7 +1,7 @@
 ![The Morse Code Logo](https://github.com/hemendrarajawat/the-morse-code/blob/master/assets/images/logo.png)
 
 ----
-
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/hemendrarajawat/the-morse-code)
 ![Build and Test](https://github.com/hemendrarajawat/the-morse-code/workflows/Build%20and%20Test/badge.svg)
 ![CodeQL](https://github.com/hemendrarajawat/the-morse-code/workflows/CodeQL/badge.svg)
 
